@@ -1,0 +1,6 @@
+::ng-deep ul.ant-list{
+  margin-right: 20px;
+}
+
+::ng-deep .ant-list-header{
+  text-decoration: underline;color: darkblue;margin-right: 20px;}

@@ -1,0 +1,13 @@
+:host ::ng-deep .ant-calendar-picker{
+  width: 250px !important;
+
+}
+:host ::ng-deep .ant-calendar-picker-icon{
+  left:12px !important;
+  right: 0 !important;
+}
+
+ :host ::ng-deep  .ant-input:placeholder-shown {
+   padding-left: 40px!important;
+
+ }

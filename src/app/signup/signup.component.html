@@ -1,0 +1,49 @@
+
+
+<!--<div>-->
+
+<!--<form           #form="ngForm">-->
+  <!--<input type="text" name="username" ngModel required />-->
+  <!--<input type="password" name="password"  ngModel required/>-->
+  <!--<br>-->
+
+  <!--<button [disabled]="!form.valid" (click)="signup(form.value)">Signup</button>-->
+  <!--<button  (click)="reset()">Reset</button>-->
+
+<!--</form>-->
+
+<!--</div>-->
+
+<div nz-row
+     nzJustify="center" nzType="flex" >
+  <h2 style="color:#3F51B5 ;text-align: center;margin-top: 50px;margin-bottom: 20px;" >Signup</h2>
+</div>
+
+<div  nz-row
+      nzJustify="center" nzType="flex">
+  <nz-input-group style="width: 250px; margin-bottom: 20px;" [nzAddOnBeforeIcon]="'user'">
+    <input nz-input placeholder="Username"  />
+  </nz-input-group>  <br />
+</div>
+
+<div nz-row
+     nzJustify="center" nzType="flex">
+  <nz-input-group style="width: 250px; margin-bottom: 20px;" [nzAddOnBeforeIcon]="'lock'">
+    <input nz-input placeholder="Password"  />
+  </nz-input-group>
+</div>
+
+
+<div nz-row style="margin-bottom: 20px; "  nzJustify="center" nzType="flex">
+  <nz-date-picker [nzRenderExtraFooter]="plainFooter"  class="datepicker" nzShowTime></nz-date-picker>
+</div>
+
+
+<div nz-row   [nzGutter]="{ xs: 8, sm: 16, md: 16, lg: 16, xl: 16, xxl: 16 }"
+     nzJustify="center" nzType="flex">
+  <div nz-col>  <button nz-button nzType="primary" >Signup</button></div>
+  <div nz-col>  <button nz-button nzType="danger" >Reset</button></div>
+</div>
+
+
+

@@ -1,0 +1,68 @@
+<div nz-row style="margin:0 20px;"  nzType="flex" nzJustify="center"
+     [nzGutter]="{ xs: 8, sm: 16, md: 16, lg: 48, xl: 48, xxl: 48 }">
+  <div nz-col nzSpan="12" nzXs="24" nzSm="24" nzMd="16" nzLg="12" nzXl="12" nzXXl="12"   >
+    <h2 style="text-decoration: underline;color: darkblue;" >Users</h2>
+    <nz-table #nzTable [nzData]="users" nzPageSize="5"
+              nzShowSizeChanger
+    >
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th nzCustomFilter>
+          Username
+          <i
+            nz-th-extra
+            class="ant-table-filter-icon"
+            nz-icon
+            nz-dropdown
+            #dropdown="nzDropdown"
+            nzType="search"
+            [nzDropdownMenu]="menu"
+            [class.ant-table-filter-open]="dropdown.nzVisible"
+            nzTrigger="click"
+            nzPlacement="bottomRight"
+            [nzClickHide]="false"
+            nzTableFilter
+          ></i>
+        </th>
+
+        <th>Actived</th>
+        <th>Actions</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr  style="cursor:pointer;" [routerLink]="data.id" *ngFor="let data of nzTable.data">
+        <td>{{ data.id }}</td>
+        <td >
+          {{ data.username }}
+        </td>
+        <td>{{ data.actived }}</td>
+        <td>
+
+          <button nz-button nzSize="small" nzType="danger" style="margin-right: 20px;"  (click)="removeUser(data.id)" >Remove</button>
+
+          <button nz-button nzSize="small" [nzType]="getStatuColor(data.actived)" [ngStyle]="{'color':getStatuColor(data.actived)}" (click)="switchStatu(data)">
+            {{getStatu(data.actived)}}
+          </button>
+
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <div class="search-box">
+        <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue" />
+        <button nz-button nzSize="small" nzType="primary" (click)="search()" class="search-button">
+          Search
+        </button>
+        <button nz-button nzSize="small" (click)="reset()">Reset</button>
+      </div>
+    </nz-dropdown-menu>
+  </div>
+  <div nz-col nzSpan="24" nzXs="24" nzSm="24" nzMd="8" nzLg="12" nzXl="12" nzXXl="12" >
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

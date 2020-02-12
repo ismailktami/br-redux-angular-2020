@@ -1,0 +1,38 @@
+<div >
+  <h2 style="text-decoration: underline;color: darkblue;" >Add User</h2>
+</div>
+<form #form="ngForm"
+>
+  <nz-alert nzType="error" nzMessage="Error" [nzDescription]="error" nzShowIcon
+  *ngIf="error"
+            style="margin-bottom: 20px;margin-right: 20px;"
+  >
+  </nz-alert>
+<div  nz-row
+      nzJustify="center" nzType="flex">
+  <nz-input-group style="width: 250px; margin-bottom: 20px;" [nzAddOnBeforeIcon]="'user'">
+    <input nz-input placeholder="Username" ngModel required name="username"  />
+  </nz-input-group>  <br />
+</div>
+
+<div nz-row
+     nzJustify="center" nzType="flex">
+  <nz-input-group style="width: 250px; margin-bottom: 20px;" [nzAddOnBeforeIcon]="'lock'">
+    <input nz-input placeholder="Password"  type="password" ngModel required name="password" />
+  </nz-input-group>
+</div>
+
+<div nz-row
+     nzJustify="center" nzType="flex">
+  <nz-input-group style="width: 250px; margin-bottom: 20px;" [nzAddOnBeforeIcon]="'lock'">
+    <input nz-input placeholder="Confirm Password" type="password"  ngModel required name="confirmedPassword"  />
+  </nz-input-group>
+</div>
+
+
+<div nz-row   [nzGutter]="{ xs: 8, sm: 16, md: 16, lg: 16, xl: 16, xxl: 16 }"
+     nzJustify="center" nzType="flex">
+  <div nz-col>  <button nz-button (click)="createUser(form)"  nzType="primary" [disabled]="!form.valid" >Add</button></div>
+  <div nz-col>  <button nz-button nzType="danger" >Reset</button></div>
+</div>
+</form>

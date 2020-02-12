@@ -1,0 +1,14 @@
+::ng-deep .ant-drawer-body{
+  padding: 0 !important;
+}
+
+::ng-deep p.ng-star-inserted{
+  padding: 15px 15px  ;
+}
+::ng-deep p.ng-star-inserted:hover {
+  background: dodgerblue;
+}
+
+::ng-deep .ant-input{
+  height: 40px;
+}

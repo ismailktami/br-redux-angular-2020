@@ -1,0 +1,10 @@
+<settings>
+<proxies>
+  <proxy>
+    <active>true</active>
+    <protocol>http</protocol>
+    <host>192.168.1.177</host>
+    <port>3128</port>
+  </proxy>
+</proxies>
+  </settings>

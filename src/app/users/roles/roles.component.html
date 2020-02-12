@@ -1,0 +1,42 @@
+<div >
+  <h2 style="text-decoration: underline;color: darkblue;" >Roles</h2>
+<ul   nz-list
+      nzBordered
+      nzSize="large"
+      [nzRenderItem]="largeItem"
+>
+
+  <li nz-list-item   style="padding: 0 0;">
+    <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+      <input type="text" nz-input placeholder="insert other Role"
+              [(ngModel)]="roleName"
+             [nzAutocomplete]="auto"
+      />
+    </nz-input-group>
+    <ng-template #suffixButton>
+      <button nz-button nzType="primary" nzSize="large" (click)="addRoleToUser()" nzSearch>Add</button>
+    </ng-template>
+    <nz-autocomplete #auto>
+        <nz-auto-option *ngFor="let option of optionGroups" [nzLabel]="option.roleName" [nzValue]="option.roleName">
+          <span class="certain-search-item-count">{{ option.roleName }}</span>
+        </nz-auto-option>
+    </nz-autocomplete>
+
+
+  </li>
+</ul>
+
+<ul
+  nz-list
+  nzBordered
+  nzSize="large"
+  [nzRenderItem]="largeItem"
+  [nzHeader]="user"
+
+>
+  <li *ngFor="let item of roles" nz-list-item [nzActions]="[opAction]" [nzContent]="item.roleName" nzNoFlex>
+    <a style="float: right" (click)="revokeRole(item.roleName)">Revoke</a>
+  </li>
+
+</ul>
+</div>
