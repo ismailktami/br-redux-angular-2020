@@ -22,7 +22,7 @@
     "@auth0/angular-jwt": "^4.0.0",
     "@ngrx/store": "^8.6.0",
     "@ngrx/store-devtools": "^8.6.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "ng-zorro-antd": "^8.5.2",
     "rxjs": "~6.4.0",
     "save": "^2.4.0",
